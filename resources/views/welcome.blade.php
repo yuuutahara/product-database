@@ -2,7 +2,24 @@
 
 @section('content')
     @if (Auth::check())
-        <div>ログインできました</div>
+        <div class="center jumbotron">
+            <div class="text-center">
+                <h1>Product database</h1>
+                {!! link_to_route('list.get', 'List', [], ['class' => 'btn btn-lg btn-primary']) !!}
+            </div>
+        </div>
+        <div class="center jumbotron">
+            <div class="text-center">
+                <h1>Product database</h1>
+                {!! link_to_route('get.get', 'Get', [], ['class' => 'btn btn-lg btn-primary']) !!}
+            </div>
+        </div>
+        <div class="center jumbotron">
+            <div class="text-center">
+                <h1>Product database</h1>
+                {!! link_to_route('input.get', 'Input', [], ['class' => 'btn btn-lg btn-primary']) !!}
+            </div>
+        </div>
     @else
         <div class="center jumbotron">
             <div class="text-center">
