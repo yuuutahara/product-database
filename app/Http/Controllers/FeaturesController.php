@@ -11,9 +11,11 @@ class FeaturesController extends Controller
     //All Featuresへ移動
     public function showAll()
     {
-        
+        $features = Feature::all('feature');
 
-        return view('features.showAll');
+        return view('features.showAll', [
+            'features' => $features,
+        ]);
     }
     
     //New Featureへ移動
