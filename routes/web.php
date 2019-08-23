@@ -21,3 +21,26 @@ Route::post('signup', 'Auth\RegisterController@register')->name('signup.post');
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login')->name('login.post');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
+
+//Listへ移動
+Route::get('list', 'ProductsController@showList')->name('list.get');
+
+//Getへ移動
+Route::get('get', 'ProductsController@showGet')->name('get.get');
+
+//Inputへ移動
+Route::get('input', 'ProductsController@showInput')->name('input.get');
+
+//Inputで作成したProductを保存
+Route::post('input', 'ProductsController@store')->name('products.store');
+
+//All Featuresへ移動
+Route::get('input/all', 'FeaturesController@showAll')->name('allFeatures.get');
+
+//New Featureへ移動
+Route::get('input/new', 'FeaturesController@showNew')->name('newFeature.get');
+
+//New Featuresで作成したFeatureを保存
+Route::post('input/new', 'FeaturesController@store')->name('features.store');
+
+

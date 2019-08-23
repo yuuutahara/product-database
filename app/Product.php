@@ -20,4 +20,10 @@ class Product extends Model
     {
         return $this->belongsTo(User::class);
     }
+    
+    public function features()
+    {
+        return $this->belongsToMany(Feature::class, 'product_feature', 'product_id', 'feature_id')->withTimestamps();
+    }
+    
 }
