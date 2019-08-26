@@ -23,7 +23,7 @@ class CreateProductFeatureTable extends Migration
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->foreign('feature_id')->references('id')->on('features')->onDelete('cascade');
 
-            // user_idとfollow_idの組み合わせの重複を許さない
+            // product_idとfeature_idの組み合わせの重複を許さない
             $table->unique(['product_id', 'feature_id']);
         });
     }

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Product;    // 追加
+use App\Feature;    // 追加
+use App\User;    // 追加
 
 class ProductsController extends Controller
 {
@@ -22,14 +24,18 @@ class ProductsController extends Controller
         }
         
         return view('welcome', $data);
+        
     }
     
-    //Listへ移動
+    //Listへ移動、Productとそれぞれの登録者、addFeatureを表示
     public function showList()
     {
+        $products = Product::all();
         
-
-        return view('products.showList');
+        return view('products.showList', [
+            'products' => $products
+        //    'registrants' => $registrants
+        ]);
     }
     
     //Getへ移動
@@ -44,20 +50,30 @@ class ProductsController extends Controller
     public function showInput()
     {
         $product = new Product;
+        $addFeature1 = Feature::all()->pluck('feature','id');
+        $addFeature2 = Feature::all()->pluck('feature','id');
+        $addFeature3 = Feature::all()->pluck('feature','id');
 
-        return view('products.showInput',['product' => $product]);
+        return view('products.showInput',[
+            'product' => $product,
+            'addFeature1' => $addFeature1,
+            'addFeature2' => $addFeature2,
+            'addFeature3' => $addFeature3
+            ]);
     }
     
     // Product新規登録処理
     public function store(Request $request)
     {
+        
+        
         $this->validate($request, [
             'number' => 'required|max:15',
         ]);
-
+        
         $product = new Product;
+        $product->user_id = \Auth::id();
         $product->number = $request->number;
-        $product->feature_id = $request->feature_id;
         $product->propertyA = $request->propertyA;
         $product->propertyB = $request->propertyB;
         $product->propertyC = $request->propertyC;
@@ -65,7 +81,14 @@ class ProductsController extends Controller
         $product->propertyE = $request->propertyE;
         $product->save();
 
+        $product->features()->attach($request->addFeature1);
+        $product->features()->attach($request->addFeature2);
+        $product->features()->attach($request->addFeature3);
+        
         return redirect('/');
+        
+        
+        
     }
     
 }

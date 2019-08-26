@@ -15,30 +15,6 @@
             </tr>
             <tr class="form-group">
                 <td>
-                    {!! Form::label('feature_id', 'Feature1') !!}
-                </td>
-                <td>
-                    {!! Form::text('feature_id', null, ['class' => 'form-control']) !!}
-                </td>
-            </tr>
-            <tr class="form-group">
-                <td>
-                    {!! Form::label('feature_id', 'Feature2') !!}
-                </td>
-                <td>
-                    {!! Form::text('feature_id', null, ['class' => 'form-control']) !!}
-                </td>
-            </tr>
-            <tr class="form-group">
-                <td>
-                    {!! Form::label('feature_id', 'Feature3') !!}
-                </td>
-                <td>
-                    {!! Form::text('feature_id', null, ['class' => 'form-control']) !!}
-                </td>
-            </tr>
-            <tr class="form-group">
-                <td>
                     {!! Form::label('propertyA', 'PropertyA') !!}
                 </td>
                 <td>
@@ -77,10 +53,35 @@
                     {!! Form::text('propertyE', null, ['class' => 'form-control']) !!}
                 </td>
             </tr>
+            <tr class="form-group">
+                <td>
+                    {!! Form::label('addFeature1', 'Feature1') !!}
+                </td>
+                <td>
+                    {!! Form::select('addFeature1',$addFeature1) !!}
+                </td>
+            </tr>
+            <tr class="form-group">
+                <td>
+                    {!! Form::label('addFeature2', 'Feature2') !!}
+                </td>
+                <td>
+                    {!! Form::select('addFeature2',$addFeature2) !!}
+                </td>
+            </tr>
+            <tr class="form-group">
+                <td>
+                    {!! Form::label('addFeature3', 'Feature3') !!}
+                </td>
+                <td>
+                    {!! Form::select('addFeature3',$addFeature3) !!}
+                </td>
+            </tr>
         </table>
         {!! Form::submit('Submit', ['class' => 'btn btn-primary']) !!}
         {!! Form::close() !!}
     </div>
+    
     
         <div class="text-center">
             {!! link_to_route('allFeatures.get', 'All Features', [], ['class' => 'btn btn-lg btn-primary']) !!}
@@ -90,5 +91,6 @@
         <div class="text-center">
             {!! link_to_route('newFeature.get', 'New Feature', [], ['class' => 'btn btn-lg btn-primary']) !!}
         </div>
+        
     
 @endsection
