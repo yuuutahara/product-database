@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Input</h1>
+    <h1>Edit No.{{ $product->number }}</h1>
     <div>
-        {!! Form::model($product, ['route' => 'products.store']) !!}
+        {!! Form::model($product, ['route' => ['products.update', $product->id],'method' => 'put']) !!}
         <table class="table table-bordered">
             <tr class="form-group">
                 <td>{!! Form::label('number', 'No.') !!}</td>
@@ -48,12 +48,18 @@
     
     <div class="container text-center">
         <div class="row">
-            <div class="text-center col-6">
+            <div class="text-center col-4">
                 {!! link_to_route('allFeatures.get', 'All Features', [], ['class' => 'btn btn-success']) !!}
             </div>
         
-            <div class="text-center col-6">
+            <div class="text-center col-4">
                 {!! link_to_route('newFeature.get', 'New Feature', [], ['class' => 'btn btn-secondary']) !!}
+            </div>
+            
+            <div class="text-center col-4">
+                {!! Form::model($product, ['route' => ['products.destroy', $product->id], 'method' => 'delete']) !!}
+                    {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                {!! Form::close() !!}
             </div>
         </div>
     </div>

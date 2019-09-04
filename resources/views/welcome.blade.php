@@ -3,19 +3,32 @@
 @section('content')
     @if (Auth::check())
         
+        <div class="container text-center" style="position: absolute; top: 50%; left: 50%; transform: translateY(-50%) translateX(-50%);margin-top: 80px;">
             <div class="text-center">
-                {!! link_to_route('list.get', 'List', [], ['class' => 'btn btn-lg btn-primary']) !!}
+                <h1 style="font-size: 80px; padding: 50px;">Product database</h1>
             </div>
-        
-            <div class="text-center">
-                {!! link_to_route('get.get', 'Get', [], ['class' => 'btn btn-lg btn-primary']) !!}
+            <div class="row">
+                <div class="col-6">
+                    <button type="button" class="btn btn-default">
+                        <a href="{{route('list.get')}}"><i class="far fa-list-alt fa-7x"></i></a>
+                    </button>
+                </div>
+                <div class="col-6">
+                    <button type="button" class="btn btn-default">
+                        <a href="{{route('input.get')}}"><i class="fas fa-pencil-alt fa-7x"></i></a>
+                    </button>
+                </div>
             </div>
-        
-            <div class="text-center">
-                {!! link_to_route('input.get', 'Input', [], ['class' => 'btn btn-lg btn-primary']) !!}
+            <div class="row">
+                <div class="col-6">
+                    {!! link_to_route('list.get', 'List', [], ['class' => 'btn btn-lg btn-primary']) !!}
+                </div>
+                <div class="col-6">
+                    {!! link_to_route('input.get', 'Input', [], ['class' => 'btn btn-lg btn-primary']) !!}
+                </div>
             </div>
-        
-        
+        </div>
+
     @else
         <div class="center jumbotron">
             <div class="text-center">
@@ -25,3 +38,4 @@
         </div>
     @endif
 @endsection
+

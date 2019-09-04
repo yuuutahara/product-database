@@ -25,8 +25,20 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 //Listへ移動
 Route::get('list', 'ProductsController@showList')->name('list.get');
 
+//Feature毎のListへ移動
+Route::get('list/feature/{id}', 'FeaturesController@showFeatureList')->name('featureList.get');
+
+//Editへ移動
+Route::get('edit/{id}', 'ProductsController@showEdit')->name('edit.get');
+
+//更新
+Route::put('edit/{id}', 'ProductsController@update')->name('products.update');
+
 //Getへ移動
-Route::get('get', 'ProductsController@showGet')->name('get.get');
+Route::get('get/{id1}', 'ProductsController@showGet')->name('get.get');
+
+//Productを削除
+Route::delete('edit/{id}', 'ProductsController@destroy')->name('products.destroy');
 
 //Inputへ移動
 Route::get('input', 'ProductsController@showInput')->name('input.get');

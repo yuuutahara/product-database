@@ -37,4 +37,15 @@ class FeaturesController extends Controller
         return redirect('/');
     }
     
+    //Feature毎のListへ移動
+    public function showFeatureList($id)
+    {
+        $features = Feature::find($id);
+        $products = $features->products;
+        
+        return view('products.showFeatureList', [
+            'products' => $products,
+        ]);
+    }
+    
 }
