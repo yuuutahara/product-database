@@ -6,6 +6,7 @@
         <tr>
             <td>No.</td>
             <td>{{ $products->number }}</td>
+            
         </tr>
         <tr>
             <td>PropertyA</td>
@@ -32,9 +33,14 @@
             <td>{{ $products->features->implode('feature', ', ') }}</td>
         </tr>
     </table>
-    
-    <div>
-        {!! link_to_route('list.get', 'List', [], ['class' => 'btn btn-primary']) !!}
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                {!! link_to_route('list.get', 'List', [], ['class' => 'btn btn-primary']) !!}
+            </div>
+            <div class="col-6">
+                {!! link_to_route('list2.get', 'Add', ['id' => $products->id], ['class' => 'btn btn-success']) !!}
+            </div>
+        </div>
     </div>
-    
 @endsection

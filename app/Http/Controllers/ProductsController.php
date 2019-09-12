@@ -35,35 +35,80 @@ class ProductsController extends Controller
         ]);
     }
     
-    //Feature毎のListへ移動
-    public function showFeatureList(Request $request)
-    {
-        $test = $request;
-        dd($test);
-
-        return response()->json([
-        'test' => $test
-        ]);
-        
-        
-        $features = Feature::find($request);
-        $products = $features->products();
-        
-        return view('products.showFeatureList', [
-            'products' => $products,
-        ]);
-    }
-    
     //Getへ移動
     public function showGet($request)
     {
         $products = Product::find($request);
-        //$features = $products->features->pluck('feature');
         
         return view('products.showGet',[
             'products' => $products,
-            //'features' => $features,
-            ]);
+        ]);
+    }
+    
+    //List2へ移動
+    public function showList2(Request $request,$id)
+    {
+        $request->session()->put('id1', $id);
+        $productId1 = $request->session()->get('id1');
+        $product1 = Product::find($productId1);
+        
+        $products = Product::all();
+        
+        return view('products.showList2', [
+            'products' => $products,
+            'product1' => $product1,
+        ]);
+    }
+    
+    //Get2へ移動
+    public function showGet2(Request $request,$id)
+    {
+        $productId1 = $request->session()->get('id1');
+        $product1 = Product::find($productId1);
+        
+        $products = Product::find($id);
+        
+        return view('products.showGet2',[
+            'products' => $products,
+            'product1' => $product1,
+        ]);
+    }
+    
+    //List3へ移動
+    public function showList3(Request $request,$id)
+    {
+        $productId1 = $request->session()->get('id1');
+        $product1 = Product::find($productId1);
+        
+        $request->session()->put('id2', $id);
+        $productId2 = $request->session()->get('id2');
+        $product2 = Product::find($productId2);
+        
+        $products = Product::all();
+        
+        return view('products.showList3', [
+            'products' => $products,
+            'product1' => $product1,
+            'product2' => $product2,
+        ]);
+    }
+    
+    //Get3へ移動
+    public function showGet3(Request $request,$id)
+    {
+        $productId1 = $request->session()->get('id1');
+        $product1 = Product::find($productId1);
+        
+        $productId2 = $request->session()->get('id2');
+        $product2 = Product::find($productId2);
+        
+        $products = Product::find($id);
+        
+        return view('products.showGet3',[
+            'products' => $products,
+            'product1' => $product1,
+            'product2' => $product2,
+        ]);
     }
     
     //Inputへ移動、Productインスタンスを作る
@@ -79,7 +124,7 @@ class ProductsController extends Controller
             'addFeature1' => $addFeature1,
             'addFeature2' => $addFeature2,
             'addFeature3' => $addFeature3
-            ]);
+        ]);
     }
     
     // Product新規登録処理
@@ -119,7 +164,7 @@ class ProductsController extends Controller
             'addFeature1' => $addFeature1,
             'addFeature2' => $addFeature2,
             'addFeature3' => $addFeature3
-            ]);
+        ]);
     }
     
     //Productを削除

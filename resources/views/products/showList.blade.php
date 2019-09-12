@@ -23,10 +23,7 @@
                         @endforeach
                     </td>
                     <td>
-                        {!! Form::open(['route' => ['get.get', $product->id], 'method' => 'get']) !!}
-                            {!! Form::hidden('id1','$product->id') !!}
-                            {!! Form::submit('Get', ['class' => 'btn btn-primary']) !!}
-                        {!! Form::close() !!}
+                        {!! link_to_route('get.get', 'Get', ['id' => $product->id], ['class' => 'btn btn-primary']) !!}
                     </td>
                     <td>
                         {!! link_to_route('edit.get', 'Edit', ['id' => $product->id], ['class' => 'btn btn-success']) !!}

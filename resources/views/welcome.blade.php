@@ -3,7 +3,7 @@
 @section('content')
     @if (Auth::check())
         
-        <div class="container text-center" style="position: absolute; top: 50%; left: 50%; transform: translateY(-50%) translateX(-50%);margin-top: 80px;">
+        <div class="container text-center center jumbotron">
             <div class="text-center">
                 <h1 style="font-size: 80px; padding: 50px;">Product database</h1>
             </div>

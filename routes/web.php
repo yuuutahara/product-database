@@ -35,7 +35,19 @@ Route::get('edit/{id}', 'ProductsController@showEdit')->name('edit.get');
 Route::put('edit/{id}', 'ProductsController@update')->name('products.update');
 
 //Getへ移動
-Route::get('get/{id1}', 'ProductsController@showGet')->name('get.get');
+Route::get('get1/{id}', 'ProductsController@showGet')->name('get.get');
+
+//List2に移動
+Route::get('list2/{id}','ProductsController@showList2')->name('list2.get');
+
+//Get2へ移動
+Route::get('get2/{id}', 'ProductsController@showGet2')->name('get2.get');
+
+//List3に移動
+Route::get('list3/{id}','ProductsController@showList3')->name('list3.get');
+
+//Get3へ移動
+Route::get('get3/{id}', 'ProductsController@showGet3')->name('get3.get');
 
 //Productを削除
 Route::delete('edit/{id}', 'ProductsController@destroy')->name('products.destroy');

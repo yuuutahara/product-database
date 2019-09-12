@@ -2,6 +2,7 @@
 
 @section('content')
     <h1>List</h1>
+    <h2>No.{{ $product1->number }} &...</h2>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -18,18 +19,16 @@
                     <td>{{ $product->number }}</td>
                     <td>{{ $product->user->name }}</td>
                     <td>
-                    @foreach($product->features as $feature)
-                        {{ $feature->feature }}
-                    @endforeach
+                        @foreach($product->features as $feature)
+                            <a href="{{route('featureList.get', ['id' => $feature->id]) }}">{{ $feature->feature }}</a>
+                        @endforeach
                     </td>
                     <td>
-                        {!! Form::open(['route' => ['get2.get', $product->id], 'method' => 'get']) !!}
-                            
-                            {!! Form::hidden('id2','$product->id') !!}
-                            {!! Form::submit('Get', ['class' => 'btn btn-primary']) !!}
-                        {!! Form::close() !!}
+                        {!! link_to_route('get2.get', 'Get', ['id' => $product->id], ['class' => 'btn btn-primary']) !!}
                     </td>
-                    <td>Edit</td>
+                    <td>
+                        {!! link_to_route('edit.get', 'Edit', ['id' => $product->id], ['class' => 'btn btn-success']) !!}
+                    </td>
                 </tr>
             @endforeach
         </tbody>
