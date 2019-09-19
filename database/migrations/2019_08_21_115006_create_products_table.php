@@ -17,11 +17,11 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
             $table->string('number')->unique();
-            $table->string('propertyA');
-            $table->string('propertyB');
-            $table->string('propertyC');
-            $table->string('propertyD');
-            $table->string('propertyE');
+            $table->string('propertyA')->nullable();
+            $table->string('propertyB')->nullable();
+            $table->string('propertyC')->nullable();
+            $table->string('propertyD')->nullable();
+            $table->string('propertyE')->nullable();
             $table->timestamps();
             
             // 外部キー制約

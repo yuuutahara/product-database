@@ -137,11 +137,11 @@ class ProductsController extends Controller
         $product = new Product;
         $product->user_id = \Auth::id();
         $product->number = $request->number;
-        $product->propertyA = $request->propertyA;
-        $product->propertyB = $request->propertyB;
-        $product->propertyC = $request->propertyC;
-        $product->propertyD = $request->propertyD;
-        $product->propertyE = $request->propertyE;
+        $product->propertyA = $request->input('propertyA', '');
+        $product->propertyB = $request->input('propertyB', '');
+        $product->propertyC = $request->input('propertyC', '');
+        $product->propertyD = $request->input('propertyD', '');
+        $product->propertyE = $request->input('propertyE', '');
         $product->save();
         //save後にfeatureを設定
         $product->features()->attach($request->addFeature1);

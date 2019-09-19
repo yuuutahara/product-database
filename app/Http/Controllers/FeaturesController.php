@@ -34,7 +34,7 @@ class FeaturesController extends Controller
         $feature->user_id = \Auth::id();
         $feature->save();
         
-        return redirect('/');
+        return redirect('/input');
     }
     
     //Feature毎のListへ移動
