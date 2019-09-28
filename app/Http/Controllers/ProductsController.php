@@ -28,7 +28,7 @@ class ProductsController extends Controller
     //Listへ移動
     public function showList()
     {
-        $products = Product::all();
+        $products = Product::orderBy('number')->paginate(100);
         
         return view('products.showList', [
             'products' => $products
@@ -52,7 +52,7 @@ class ProductsController extends Controller
         $productId1 = $request->session()->get('id1');
         $product1 = Product::find($productId1);
         
-        $products = Product::all();
+        $products = Product::orderBy('number')->paginate(100);
         
         return view('products.showList2', [
             'products' => $products,
@@ -84,7 +84,7 @@ class ProductsController extends Controller
         $productId2 = $request->session()->get('id2');
         $product2 = Product::find($productId2);
         
-        $products = Product::all();
+        $products = Product::orderBy('number')->paginate(100);
         
         return view('products.showList3', [
             'products' => $products,

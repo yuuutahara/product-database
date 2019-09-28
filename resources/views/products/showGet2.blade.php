@@ -9,27 +9,27 @@
             <td>{{ $products->number }}</td>
         </tr>
         <tr>
-            <td>PropertyA</td>
+            <td>粘度・TI</td>
             <td>{{ $product1->propertyA }}</td>
             <td>{{ $products->propertyA }}</td>
         </tr>
         <tr>
-            <td>PropertyB</td>
+            <td>硬度</td>
             <td>{{ $product1->propertyB }}</td>
             <td>{{ $products->propertyB }}</td>
         </tr>
         <tr>
-            <td>PropertyC</td>
+            <td>硬化条件</td>
             <td>{{ $product1->propertyC }}</td>
             <td>{{ $products->propertyC }}</td>
         </tr>
         <tr>
-            <td>PropertyD</td>
+            <td>接着強度</td>
             <td>{{ $product1->propertyD }}</td>
             <td>{{ $products->propertyD }}</td>
         </tr>
         <tr>
-            <td>PropertyE</td>
+            <td>Tg</td>
             <td>{{ $product1->propertyE }}</td>
             <td>{{ $products->propertyE }}</td>
         </tr>

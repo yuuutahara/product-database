@@ -9,23 +9,23 @@
             
         </tr>
         <tr>
-            <td>PropertyA</td>
+            <td>粘度・TI</td>
             <td>{{ $products->propertyA }}</td>
         </tr>
         <tr>
-            <td>PropertyB</td>
+            <td>硬度</td>
             <td>{{ $products->propertyB }}</td>
         </tr>
         <tr>
-            <td>PropertyC</td>
+            <td>硬化条件</td>
             <td>{{ $products->propertyC }}</td>
         </tr>
         <tr>
-            <td>PropertyD</td>
+            <td>接着強度</td>
             <td>{{ $products->propertyD }}</td>
         </tr>
         <tr>
-            <td>PropertyE</td>
+            <td>Tg</td>
             <td>{{ $products->propertyE }}</td>
         </tr>
         <tr>

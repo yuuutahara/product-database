@@ -10,23 +10,23 @@
                 <td>{!! Form::text('number', null, ['class' => 'form-control']) !!}</td>
             </tr>
             <tr class="form-group">
-                <td>{!! Form::label('propertyA', 'PropertyA') !!}</td>
+                <td>{!! Form::label('propertyA', '粘度・TI') !!}</td>
                 <td>{!! Form::text('propertyA', null, ['class' => 'form-control']) !!}</td>
             </tr>
             <tr class="form-group">
-                <td>{!! Form::label('propertyB', 'PropertyB') !!}</td>
+                <td>{!! Form::label('propertyB', '硬度') !!}</td>
                 <td>{!! Form::text('propertyB', null, ['class' => 'form-control']) !!}</td>
             </tr>
             <tr class="form-group">
-                <td>{!! Form::label('propertyC', 'PropertyC') !!}</td>
+                <td>{!! Form::label('propertyC', '硬化条件') !!}</td>
                 <td>{!! Form::text('propertyC', null, ['class' => 'form-control']) !!}</td>
             </tr>
             <tr class="form-group">
-                <td>{!! Form::label('propertyD', 'PropertyD') !!}</td>
+                <td>{!! Form::label('propertyD', '接着強度') !!}</td>
                 <td>{!! Form::text('propertyD', null, ['class' => 'form-control']) !!}</td>
             </tr>
             <tr class="form-group">
-                <td>{!! Form::label('propertyE', 'PropertyE') !!}</td>
+                <td>{!! Form::label('propertyE', 'Tg') !!}</td>
                 <td>{!! Form::text('propertyE', null, ['class' => 'form-control']) !!}</td>
             </tr>
             <tr class="form-group">
